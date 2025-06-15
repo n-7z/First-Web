@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -27,29 +27,27 @@
       0% { background-position: 0 0; }
       100% { background-position: 20px 20px; }
     }
-    .navbar-container {
+    .navbar {
       position: relative;
       z-index: 1;
-      background-color: #1a1a1a;
-      margin: 20px auto;
-      border: 2px solid #aa0000;
-      border-radius: 12px;
-      padding: 10px;
-      width: fit-content;
       display: flex;
+      justify-content: center;
+      background-color: #1a1a1a;
+      padding: 10px;
+      border-bottom: 2px solid #aa0000;
     }
-    .navbar-container a {
+    .navbar a {
       color: #ff4d4d;
-      padding: 10px 20px;
       text-decoration: none;
-      font-weight: bold;
+      margin: 0 10px;
+      padding: 10px 20px;
       border-radius: 8px;
-      margin: 0 5px;
-      transition: 0.3s;
-      background-color: #1f1f1f;
       border: 1px solid #aa0000;
+      background-color: #1f1f1f;
+      transition: 0.3s;
+      font-weight: bold;
     }
-    .navbar-container a:hover {
+    .navbar a:hover {
       background-color: #aa0000;
       color: white;
     }
@@ -62,62 +60,28 @@
       background-color: #1a1a1a;
       border: 2px solid #aa0000;
       border-radius: 12px;
+      text-align: center;
     }
     h1 {
       color: #ff3333;
-      text-align: center;
+      margin-bottom: 20px;
     }
-    .script-box {
-      background-color: #0f0f0f;
-      border: 2px solid #aa0000;
-      border-radius: 10px;
-      padding: 20px;
-      position: relative;
-      font-family: monospace;
-      color: #ff4d4d;
-      white-space: pre-wrap;
-      word-break: break-word;
-    }
-    .copy-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background-color: #ff3333;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      padding: 6px 12px;
-      cursor: pointer;
-      font-weight: bold;
-      box-shadow: 0 0 8px #ff3333;
-      transition: 0.3s;
-    }
-    .copy-btn:hover {
-      background-color: #cc0000;
-      box-shadow: 0 0 12px #cc0000;
+    p {
+      font-size: 1.1em;
+      color: #ccc;
     }
   </style>
 </head>
 <body>
   <div class="particles"></div>
-  <div class="navbar-container">
+  <div class="navbar">
     <a href="index.html">Main</a>
     <a href="GetScript.html">Get Script</a>
+    <a href="Discord.html">Discord</a>
   </div>
   <div class="container">
-    <h1>Script Loader</h1>
-    <div class="script-box" id="scriptBox">
-loadstring(game:HttpGet("https://raw.githubusercontent.com/your/script/path.lua"))()
-      <button class="copy-btn" onclick="copyScript()">Copy</button>
-    </div>
+    <h1>هنا صفحة السكربت</h1>
+    <p>تقدر تحط رابط السكربت أو الكود هنا.</p>
   </div>
-  <script>
-    function copyScript() {
-      const code = document.getElementById("scriptBox").innerText;
-      navigator.clipboard.writeText(code).then(() => {
-        alert("تم نسخ السكربت ✅");
-      });
-    }
-  </script>
 </body>
 </html>
