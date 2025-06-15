@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Discord</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0a0a0a;
+      color: #fff;
+      overflow: hidden;
+    }
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, #330000 1px, transparent 1px);
+      background-size: 20px 20px;
+      animation: moveParticles 5s linear infinite;
+      z-index: 0;
+    }
+    @keyframes moveParticles {
+      0% { background-position: 0 0; }
+      100% { background-position: 20px 20px; }
+    }
+    .navbar {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      background-color: #1a1a1a;
+      padding: 10px;
+      border-bottom: 2px solid #aa0000;
+    }
+    .navbar a {
+      color: #ff4d4d;
+      text-decoration: none;
+      margin: 0 10px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: 1px solid #aa0000;
+      background-color: #1f1f1f;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+    .navbar a:hover {
+      background-color: #aa0000;
+      color: white;
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 20px;
+      background-color: #1a1a1a;
+      border: 2px solid #aa0000;
+      border-radius: 12px;
+      text-align: center;
+    }
+    h1 {
+      color: #ff3333;
+      margin-bottom: 20px;
+    }
+    .discord-link {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #aa0000;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1.2em;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .discord-link:hover {
+      background-color: #ff0000;
+    }
+  </style>
+</head>
+<body>
+  <div class="particles"></div>
+
+  <div class="navbar">
+    <a href="index.html">Main</a>
+    <a href="Discord.html">Discord</a>
+    <a href="GetScript.html">Get Script</a>
+    <a href="GetKey.html">Get Key</a>
+  </div>
+
+  <div class="container">
+    <h1>انضم إلى سيرفر الديسكورد</h1>
+    <a class="discord-link" href="https://discord.gg/YOUR_CODE" target="_blank">
+      دخول إلى Discord
+    </a>
+  </div>
+</body>
+</html>
