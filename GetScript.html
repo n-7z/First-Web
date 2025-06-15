@@ -4,201 +4,114 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Get Script</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Cairo', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #0a0a0a;
       color: #fff;
-      overflow: hidden;
     }
-
-    /* خلفية نقط */
-    .particles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle, #330000 1px, transparent 1px);
-      background-size: 20px 20px;
-      animation: moveParticles 5s linear infinite;
-      z-index: 0;
-    }
-
-    @keyframes moveParticles {
-      0% { background-position: 0 0; }
-      100% { background-position: 20px 20px; }
-    }
-
-    /* الشعار */
-    .logo {
-      font-size: 2.5em;
-      font-weight: bold;
-      color: #ff1a1a;
-      text-align: center;
-      margin-top: 30px;
-      text-shadow: 0 0 20px #ff1a1a, 0 0 40px #aa0000;
-      animation: bounce 2s infinite ease-in-out;
-    }
-
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px) rotateX(10deg);
-      }
-    }
-
-    /* التبويبات */
-    .navbar {
-      position: relative;
-      z-index: 1;
+    .navbar-container {
       display: flex;
       justify-content: center;
       background-color: #1a1a1a;
-      padding: 15px;
-      border-bottom: 2px solid #aa0000;
-      gap: 10px;
-    }
-
-    .navbar a {
-      color: #ff4d4d;
-      text-decoration: none;
-      padding: 10px 25px;
-      border-radius: 12px;
+      margin: 20px auto;
       border: 2px solid #aa0000;
-      background-color: #1f1f1f;
+      border-radius: 12px;
+      padding: 10px;
+      width: fit-content;
+      box-shadow: 0 0 15px #aa0000;
+    }
+    .navbar-container a {
+      color: #ff4d4d;
+      padding: 10px 20px;
+      text-decoration: none;
       font-weight: bold;
-      transition: 0.3s;
-      position: relative;
-      overflow: hidden;
+      border-radius: 10px;
+      margin: 0 5px;
+      transition: all 0.3s ease;
+      background-color: #1f1f1f;
+      border: 1px solid #aa0000;
     }
-
-    .navbar a::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 26, 26, 0.2);
-      transition: left 0.4s ease;
-    }
-
-    .navbar a:hover::before {
-      left: 0;
-    }
-
-    .navbar a:hover {
+    .navbar-container a:hover {
       background-color: #aa0000;
       color: white;
       transform: scale(1.05);
     }
-
-    /* المحتوى */
     .container {
-      position: relative;
-      z-index: 1;
       max-width: 800px;
-      margin: 50px auto;
-      padding: 25px;
+      margin: 40px auto;
+      padding: 20px;
       background-color: #1a1a1a;
       border: 2px solid #aa0000;
-      border-radius: 15px;
+      border-radius: 12px;
       text-align: center;
     }
-
-    h1 {
-      color: #ff3333;
-      margin-bottom: 30px;
-    }
-
-    /* زر النسخ */
-    .copy-button {
-      display: inline-block;
-      background-color: #ff1a1a;
-      color: white;
-      font-size: 1.4em;
+    .brand-text {
+      font-size: 2em;
       font-weight: bold;
-      padding: 20px;
+      color: #ff1a1a;
+      text-shadow: 0 0 10px #ff1a1a;
+      margin-bottom: 20px;
+    }
+    .copy-btn {
       width: 80px;
       height: 80px;
-      line-height: 40px;
       border-radius: 50%;
+      background-color: #ff1a1a;
+      color: white;
+      font-weight: bold;
       border: none;
+      font-size: 1.1em;
       cursor: pointer;
-      box-shadow: 0 0 15px rgba(255, 26, 26, 0.5);
-      transition: background-color 0.3s, transform 0.2s;
+      margin-top: 15px;
+      transition: 0.3s;
     }
-
-    .copy-button:hover {
+    .copy-btn:hover {
       background-color: #cc0000;
       transform: scale(1.1);
-      box-shadow: 0 0 25px rgba(255, 26, 26, 0.8);
     }
-
-    /* إشعار النسخ */
     .notification {
-      position: fixed;
-      top: 20px;
-      right: 20px;
+      display: none;
+      margin-top: 15px;
       background-color: #aa0000;
+      padding: 10px 20px;
+      border-radius: 12px;
       color: white;
-      padding: 15px 25px;
-      border-radius: 10px;
-      border: 2px solid #ff3333;
       font-weight: bold;
-      box-shadow: 0 0 10px #ff3333;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.5s ease;
-      z-index: 1000;
-    }
-
-    .notification.show {
-      opacity: 1;
-      pointer-events: auto;
+      box-shadow: 0 0 10px #aa0000;
     }
   </style>
 </head>
 <body>
-  <div class="particles"></div>
-  
-  <div class="logo">شايع ✦</div>
-  
-  <div class="navbar">
+
+  <div class="navbar-container">
     <a href="index.html">Main</a>
     <a href="GetScript.html">Get Script</a>
     <a href="Discord.html">Discord</a>
   </div>
 
   <div class="container">
-    <h1>انسخ السكربت بضغطة</h1>
-    <button class="copy-button" id="copyBtn">نسخ</button>
+    <div class="brand-text">شايع ✦</div>
+
+    <p id="script">loadstring(game:HttpGet("https://raw.githubusercontent.com/your/script.lua"))()</p>
+
+    <button class="copy-btn" onclick="copyScript()">نسخ</button>
+
+    <div class="notification" id="notify">✅ تم النسخ</div>
   </div>
 
-  <div class="notification" id="notification">✅ تم النسخ بنجاح!</div>
-
   <script>
-    const copyBtn = document.getElementById('copyBtn');
-    const notification = document.getElementById('notification');
-
-    const scriptText = `loadstring(game:HttpGet("https://raw.githubusercontent.com/n-7z/YourScript/main/script.lua"))()`;
-
-    copyBtn.addEventListener('click', () => {
-      navigator.clipboard.writeText(scriptText).then(() => {
-        notification.classList.add('show');
+    function copyScript() {
+      const text = document.getElementById("script").innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        document.getElementById("notify").style.display = "block";
         setTimeout(() => {
-          notification.classList.remove('show');
+          document.getElementById("notify").style.display = "none";
         }, 2000);
-      }).catch(() => {
-        alert('فشل النسخ، جرب مرة أخرى');
       });
-    });
+    }
   </script>
+
 </body>
-  <a href="index.html" class="logo">شايع ✦</a>
 </html>
