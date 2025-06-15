@@ -55,20 +55,34 @@
       position: relative;
       z-index: 1;
       max-width: 800px;
-      margin: 60px auto;
-      padding: 20px;
+      margin: 80px auto;
+      padding: 30px;
       background-color: #1a1a1a;
       border: 2px solid #aa0000;
-      border-radius: 12px;
+      border-radius: 15px;
       text-align: center;
     }
     h1 {
       color: #ff3333;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
-    p {
-      font-size: 1.1em;
-      color: #ccc;
+    .discord-button {
+      display: inline-block;
+      background-color: #ff1a1a;
+      color: white;
+      font-size: 1.2em;
+      font-weight: bold;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.2s;
+      box-shadow: 0 0 15px rgba(255, 26, 26, 0.4);
+    }
+    .discord-button:hover {
+      background-color: #cc0000;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 26, 26, 0.6);
     }
   </style>
 </head>
@@ -80,8 +94,8 @@
     <a href="Discord.html">Discord</a>
   </div>
   <div class="container">
-    <h1>رابط الديسكورد</h1>
-    <p><a href="https://discord.gg/..." target="_blank" style="color:#ff4d4d;text-decoration:underline;">انضم لسيرفر الديسكورد</a></p>
+    <h1>انضم لسيرفر الديسكورد</h1>
+    <a class="discord-button" href="https://discord.gg/YourInviteCode" target="_blank">الدخول إلى السيرفر</a>
   </div>
 </body>
 </html>
