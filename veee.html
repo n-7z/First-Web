@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Get Script</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #2b0000, #0a0a0a);
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+    }
+
+    .box {
+      background-color: #111;
+      border: 3px solid crimson;
+      padding: 35px 30px;
+      max-width: 700px;
+      width: 92%;
+      border-radius: 18px;
+      box-shadow: 0 0 30px rgba(255, 0, 0, 0.6), inset 0 0 10px rgba(255, 0, 0, 0.3);
+      position: relative;
+      text-align: left;
+    }
+
+    .script-text {
+      background-color: #1b1b1b;
+      padding: 18px;
+      border-radius: 14px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      font-size: 15px;
+      margin-top: 10px;
+      color: #f8f8f8;
+      box-shadow: inset 0 0 8px rgba(255, 0, 0, 0.5);
+    }
+
+    .copy-btn {
+      background-color: crimson;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      float: right;
+      margin-top: -10px;
+      margin-bottom: 10px;
+      box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
+    }
+
+    .copy-btn:hover {
+      background-color: #ff4d4d;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      margin-top: 20px;
+      color: #aaa;
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <button class="copy-btn" onclick="copyScript()">📋 Copy Script</button>
+    <div class="script-text" id="scriptText">
+loadstring(game:HttpGet("https://raw.githubusercontent.com/n-7z/Fristhub/refs/heads/main/Emergency%20Hamburg"))()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "🎉 Welcome!";
+    Text = "Join our Discord: https://discord.gg/npSgzbgANQ";
+    Duration = 10;
+})
+    </div>
+    <div class="footer">Script by n-7z | Discord: npSgzbgANQ</div>
+  </div>
+
+  <script>
+    function copyScript() {
+      const text = document.getElementById('scriptText').innerText;
+      if (navigator.clipboard && window.isSecureContext) {
+        // navigator clipboard api method'
+        navigator.clipboard.writeText(text).then(() => {
+          alert('✅ Script copied to clipboard!');
+        }, () => {
+          fallbackCopyText(text);
+        });
+      } else {
+        // text area method
+        fallbackCopyText(text);
+      }
+    }
+
+    function fallbackCopyText(text) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';  // prevent scroll jump
+      textarea.style.left = '-999999px';
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+
+      try {
+        document.execCommand('copy');
+        alert('✅ Script copied to clipboard!');
+      } catch (err) {
+        alert('Failed to copy text');
+      }
+
+      document.body.removeChild(textarea);
+    }
+  </script>
+
+</body>
+</html>
