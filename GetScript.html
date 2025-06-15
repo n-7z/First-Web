@@ -55,20 +55,58 @@
       position: relative;
       z-index: 1;
       max-width: 800px;
-      margin: 60px auto;
+      margin: 80px auto;
       padding: 20px;
       background-color: #1a1a1a;
       border: 2px solid #aa0000;
-      border-radius: 12px;
+      border-radius: 15px;
       text-align: center;
     }
     h1 {
       color: #ff3333;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
-    p {
-      font-size: 1.1em;
-      color: #ccc;
+    .copy-button {
+      display: inline-block;
+      background-color: #ff1a1a;
+      color: white;
+      font-size: 1.5em;
+      font-weight: bold;
+      padding: 20px 20px;
+      width: 80px;
+      height: 80px;
+      line-height: 40px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255, 26, 26, 0.5);
+      transition: background-color 0.3s, transform 0.2s;
+      user-select: none;
+    }
+    .copy-button:hover {
+      background-color: #cc0000;
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(255, 26, 26, 0.8);
+    }
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #aa0000;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 10px;
+      border: 2px solid #ff3333;
+      font-weight: bold;
+      box-shadow: 0 0 10px #ff3333;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+      z-index: 1000;
+    }
+    .notification.show {
+      opacity: 1;
+      pointer-events: auto;
     }
   </style>
 </head>
@@ -80,8 +118,28 @@
     <a href="Discord.html">Discord</a>
   </div>
   <div class="container">
-    <h1>هنا صفحة السكربت</h1>
-    <p>تقدر تحط رابط السكربت أو الكود هنا.</p>
+    <h1>نسخ السكربت</h1>
+    <button class="copy-button" id="copyBtn" title="انقر لنسخ السكربت">نسخ</button>
   </div>
+  <div class="notification" id="notification">تم النسخ</div>
+
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const notification = document.getElementById('notification');
+
+    // نص السكربت اللي تبيه ينسخ (غيره حسب سكربتك)
+    const scriptText = `print("Hello, this is your script!")`;
+
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(scriptText).then(() => {
+        notification.classList.add('show');
+        setTimeout(() => {
+          notification.classList.remove('show');
+        }, 2000);
+      }).catch(() => {
+        alert('فشل النسخ، جرب مرة أخرى');
+      });
+    });
+  </script>
 </body>
 </html>
