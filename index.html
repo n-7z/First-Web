@@ -12,27 +12,6 @@
       color: #fff;
     }
 
-    .logo {
-      font-size: 2.5em;
-      font-weight: bold;
-      color: #ff1a1a;
-      text-align: center;
-      margin-top: 30px;
-      display: block;
-      text-decoration: none;
-      text-shadow: 0 0 20px #ff1a1a, 0 0 40px #aa0000;
-      animation: bounce 2s infinite ease-in-out;
-      transition: transform 0.2s;
-    }
-    .logo:hover {
-      transform: scale(1.05);
-      color: #ffffff;
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px) rotateX(10deg); }
-    }
-
     .navbar-container {
       display: flex;
       justify-content: center;
@@ -73,6 +52,14 @@
       text-align: center;
     }
 
+    .brand-text {
+      font-size: 2em;
+      font-weight: bold;
+      color: #ff1a1a;
+      text-shadow: 0 0 10px #ff1a1a;
+      margin-bottom: 20px;
+    }
+
     h1 {
       color: #ff3333;
     }
@@ -84,7 +71,6 @@
   </style>
 </head>
 <body>
-  <a href="index.html" class="logo">شايع ✦</a>
 
   <div class="navbar-container">
     <a href="index.html">Main</a>
@@ -93,8 +79,11 @@
   </div>
 
   <div class="container">
+    <div class="brand-text">شايع ✦</div>
+
     <h1>مرحبًا بك في الصفحة الرئيسية</h1>
     <p>هنا تقدر تحط شرح بسيط عن المشروع أو السكربتات أو أي معلومات عامة.</p>
   </div>
+
 </body>
 </html>
