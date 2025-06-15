@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Get Script</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #111;
+      color: #eee;
+    }
+
+    .navbar {
+      background-color: #1f1f1f;
+      display: flex;
+      padding: 12px 24px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    }
+
+    .navbar a {
+      color: #fff;
+      margin-right: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #00bcd4;
+    }
+
+    .container {
+      padding: 40px 20px;
+    }
+
+    .script-box {
+      background-color: #1c1c1c;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 20px;
+      position: relative;
+      font-family: monospace;
+      color: #0f0;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #00bcd4;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .copy-btn:hover {
+      background-color: #0097a7;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="index.html">Main</a>
+    <a href="GetScript.html">Get Script</a>
+  </div>
+
+  <div class="container">
+    <h1>Script</h1>
+    <div class="script-box" id="scriptBox">
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/your/script/path.lua"))()
+      <button class="copy-btn" onclick="copyScript()">Copy</button>
+    </div>
+  </div>
+
+  <script>
+    function copyScript() {
+      const code = document.getElementById("scriptBox").innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        alert("تم نسخ السكربت ✅");
+      });
+    }
+  </script>
+
+</body>
+</html>
