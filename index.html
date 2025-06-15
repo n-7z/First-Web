@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -27,29 +27,27 @@
       0% { background-position: 0 0; }
       100% { background-position: 20px 20px; }
     }
-    .navbar-container {
+    .navbar {
       position: relative;
       z-index: 1;
-      background-color: #1a1a1a;
-      margin: 20px auto;
-      border: 2px solid #aa0000;
-      border-radius: 12px;
-      padding: 10px;
-      width: fit-content;
       display: flex;
+      justify-content: center;
+      background-color: #1a1a1a;
+      padding: 10px;
+      border-bottom: 2px solid #aa0000;
     }
-    .navbar-container a {
+    .navbar a {
       color: #ff4d4d;
-      padding: 10px 20px;
       text-decoration: none;
-      font-weight: bold;
+      margin: 0 10px;
+      padding: 10px 20px;
       border-radius: 8px;
-      margin: 0 5px;
-      transition: 0.3s;
-      background-color: #1f1f1f;
       border: 1px solid #aa0000;
+      background-color: #1f1f1f;
+      transition: 0.3s;
+      font-weight: bold;
     }
-    .navbar-container a:hover {
+    .navbar a:hover {
       background-color: #aa0000;
       color: white;
     }
@@ -62,27 +60,28 @@
       background-color: #1a1a1a;
       border: 2px solid #aa0000;
       border-radius: 12px;
+      text-align: center;
     }
     h1 {
       color: #ff3333;
-      text-align: center;
+      margin-bottom: 20px;
     }
     p {
       font-size: 1.1em;
-      line-height: 1.6;
-      color: #ddd;
+      color: #ccc;
     }
   </style>
 </head>
 <body>
   <div class="particles"></div>
-  <div class="navbar-container">
+  <div class="navbar">
     <a href="index.html">Main</a>
     <a href="GetScript.html">Get Script</a>
+    <a href="Discord.html">Discord</a>
   </div>
   <div class="container">
     <h1>مرحبًا بك في الصفحة الرئيسية</h1>
-    <p>يمكنك وضع أي محتوى تريده هنا، مثل وصف لمشروعك أو روابط السكربت أو أي شيء تريده أن يظهر أول ما يدخل الزائر.</p>
+    <p>هذا هو المحتوى الرئيسي.</p>
   </div>
 </body>
 </html>
