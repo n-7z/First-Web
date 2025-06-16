@@ -1,89 +1,13 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Get Script</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0a0a0a;
-      color: #fff;
-    }
-    .navbar-container {
-      display: flex;
-      justify-content: center;
-      background-color: #1a1a1a;
-      margin: 20px auto;
-      border: 2px solid #aa0000;
-      border-radius: 12px;
-      padding: 10px;
-      width: fit-content;
-      box-shadow: 0 0 15px #aa0000;
-    }
-    .navbar-container a {
-      color: #ff4d4d;
-      padding: 10px 20px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 10px;
-      margin: 0 5px;
-      transition: all 0.3s ease;
-      background-color: #1f1f1f;
-      border: 1px solid #aa0000;
-    }
-    .navbar-container a:hover {
-      background-color: #aa0000;
-      color: white;
-      transform: scale(1.05);
-    }
-    .container {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
-      background-color: #1a1a1a;
-      border: 2px solid #aa0000;
-      border-radius: 12px;
-      text-align: center;
-    }
-    .brand-text {
-      font-size: 2em;
-      font-weight: bold;
-      color: #ff1a1a;
-      text-shadow: 0 0 10px #ff1a1a;
-      margin-bottom: 20px;
-    }
-    .copy-btn {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background-color: #ff1a1a;
-      color: white;
-      font-weight: bold;
-      border: none;
-      font-size: 1.1em;
-      cursor: pointer;
-      margin-top: 15px;
-      transition: 0.3s;
-    }
-    .copy-btn:hover {
-      background-color: #cc0000;
-      transform: scale(1.1);
-    }
-    .notification {
-      display: none;
-      margin-top: 15px;
-      background-color: #aa0000;
-      padding: 10px 20px;
-      border-radius: 12px;
-      color: white;
-      font-weight: bold;
-      box-shadow: 0 0 10px #aa0000;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="particles"></div>
 
   <div class="navbar-container">
     <a href="index.html">Main</a>
@@ -92,26 +16,31 @@
   </div>
 
   <div class="container">
-    <div class="brand-text">شايع ✦</div>
+    <h1>Script</h1>
+    <button class="copy-btn" onclick="copyScript()">📋 اضغط لنسخ السكربت</button>
+    <pre id="scriptText">loadstring(game:HttpGet("https://raw.githubusercontent.com/YourUsername/Script.lua"))()</pre>
+    <div id="notif" class="notification">✅ تم النسخ!</div>
 
-    <p id="script">loadstring(game:HttpGet("https://raw.githubusercontent.com/your/script.lua"))()</p>
+    <hr style="margin: 40px 0; border: 1px solid #aa0000;" />
 
-    <button class="copy-btn" onclick="copyScript()">نسخ</button>
-
-    <div class="notification" id="notify">✅ تم النسخ</div>
+    <div class="updates-box">
+      <h2>📌 آخر التحديثات</h2>
+      <ul>
+        <li><strong>[16 يونيو 2025]</strong> - تحسين تصميم الصفحة بالكامل.</li>
+        <li><strong>[15 يونيو 2025]</strong> - إضافة زر نسخ السكربت + إشعار.</li>
+        <li><strong>[14 يونيو 2025]</strong> - ربط السكربت بسيرفر GitHub مباشر.</li>
+      </ul>
+    </div>
   </div>
 
   <script>
     function copyScript() {
-      const text = document.getElementById("script").innerText;
-      navigator.clipboard.writeText(text).then(() => {
-        document.getElementById("notify").style.display = "block";
-        setTimeout(() => {
-          document.getElementById("notify").style.display = "none";
-        }, 2000);
-      });
+      const script = document.getElementById("scriptText").innerText;
+      navigator.clipboard.writeText(script);
+      const notif = document.getElementById("notif");
+      notif.style.display = "block";
+      setTimeout(() => notif.style.display = "none", 2000);
     }
   </script>
-
 </body>
 </html>
