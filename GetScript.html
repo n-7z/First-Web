@@ -4,7 +4,128 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Get Script</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0a0a0a;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, #330000 1px, transparent 1px);
+      background-size: 20px 20px;
+      animation: moveParticles 5s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes moveParticles {
+      0% { background-position: 0 0; }
+      100% { background-position: 20px 20px; }
+    }
+
+    .navbar-container {
+      position: relative;
+      z-index: 1;
+      background-color: #1a1a1a;
+      margin: 20px auto;
+      border: 2px solid #aa0000;
+      border-radius: 12px;
+      padding: 10px;
+      width: fit-content;
+      display: flex;
+    }
+
+    .navbar-container a {
+      color: #ff4d4d;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      margin: 0 5px;
+      transition: 0.3s;
+      background-color: #1f1f1f;
+      border: 1px solid #aa0000;
+    }
+
+    .navbar-container a:hover {
+      background-color: #aa0000;
+      color: white;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 20px;
+      background-color: #1a1a1a;
+      border: 2px solid #aa0000;
+      border-radius: 12px;
+    }
+
+    h1 {
+      color: #ff3333;
+      text-align: center;
+    }
+
+    .copy-btn {
+      background-color: #aa0000;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+      display: block;
+      margin: 0 auto 20px auto;
+    }
+
+    .copy-btn:hover {
+      background-color: #ff0000;
+    }
+
+    pre {
+      background-color: #111;
+      padding: 15px;
+      border: 2px dashed #aa0000;
+      border-radius: 10px;
+      white-space: pre-wrap;
+      word-break: break-word;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .notification {
+      background-color: #aa0000;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 15px;
+      display: none;
+    }
+
+    .updates-box {
+      background-color: #1a1a1a;
+      border: 2px solid #aa0000;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 30px;
+      color: #eee;
+    }
+
+    .updates-box h3 {
+      color: #ff4d4d;
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
   <div class="particles"></div>
@@ -16,20 +137,15 @@
   </div>
 
   <div class="container">
-    <h1>Script</h1>
+    <h1>Get Script</h1>
     <button class="copy-btn" onclick="copyScript()">📋 اضغط لنسخ السكربت</button>
     <pre id="scriptText">loadstring(game:HttpGet("https://raw.githubusercontent.com/YourUsername/Script.lua"))()</pre>
     <div id="notif" class="notification">✅ تم النسخ!</div>
 
-    <hr style="margin: 40px 0; border: 1px solid #aa0000;" />
-
     <div class="updates-box">
-      <h2>📌 آخر التحديثات</h2>
-      <ul>
-        <li><strong>[16 يونيو 2025]</strong> - تحسين تصميم الصفحة بالكامل.</li>
-        <li><strong>[15 يونيو 2025]</strong> - إضافة زر نسخ السكربت + إشعار.</li>
-        <li><strong>[14 يونيو 2025]</strong> - ربط السكربت بسيرفر GitHub مباشر.</li>
-      </ul>
+      <h3>📌 التحديثات</h3>
+      <p>✅ 16 يونيو 2025 - تحسين تصميم زر النسخ.</p>
+      <p>✅ 15 يونيو 2025 - إضافة صفحة Get Script.</p>
     </div>
   </div>
 
