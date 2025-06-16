@@ -1,2 +1,12 @@
-
-
+.updates-box {
+  background-color: #1a1a1a;
+  border: 2px solid #aa0000;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+  color: #eee;
+}
+.updates-box h3 {
+  color: #ff4d4d;
+  margin-bottom: 10px;
+}
